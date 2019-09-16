@@ -35,6 +35,7 @@
     "build-dev": "NODE_ENV=development node ./build/build.js",
     "build-prod": "NODE_ENV=production node ./build/build.js",
     "dev": "NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
+    "prestart": "npm install webpack-dev-server -g",
     "start": "npm run dev",
     "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './src/fonts/'"
   },
