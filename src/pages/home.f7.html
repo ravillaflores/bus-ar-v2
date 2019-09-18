@@ -1,0 +1,151 @@
+<template>
+  <div class="page" data-name="home">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="title sliding">Bus-AR</div>
+        <div class="title-large center">
+          <div class="title-large-text">Bus-AR</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable page content-->
+    <div class="page-content">
+      <div class="block block-strong" id="mainContent">
+        <p hidden id="hidCurTime"></p>
+        {{#each bus}}
+        <div class="row">
+          <p hidden class='hidTime' id="hidTime-{{stopcode}}-{{buscode}}"></p>
+          <p hidden class='hidLine' id="hidLine-{{stopcode}}-{{buscode}}"></p>
+          <table class="main-table">
+            <thead>
+              <tr>
+                <td colspan="3">{{busstop}} [{{stopcode}}]</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  <p class="main-bus-desc">{{name}}</p>
+                </td>
+                <td class="text-align-right td-bus-label"><div class="bus-label button button-raised button-fill">{{cap}}</div></td>
+                <td rowspan="2" class="text-align-right num-display"><a href="#" class="button button-raised button-fill color-black color-green main-button-time" id="btnLine-{{stopcode}}-{{buscode}}">{{disp}}</a></td>
+              </tr>
+              <tr>
+                  <td class="text-align-right td-bus-label"><div class="bus-label button button-raised button-fill">{{type}}</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        {{/each}}
+        <!-- <div class="row">
+          <p hidden class='hidTime' id="hidTimeA"></p>
+          <p hidden class='hidLine' id="hidLineA"></p>
+          <table class="main-table">
+            <thead>
+              <tr>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  <p class="main-bus-desc">Bus Liner - A</p>
+                </td>
+                <td class="text-align-right td-bus-label"><div class="bus-label button button-raised button-fill">Standing</div></td>
+                <td rowspan="2" class="text-align-right num-display"><a href="#" class="button button-raised button-fill color-black color-green main-button-time" id="btnLineA">2</a></td>
+              </tr>
+              <tr>
+                  <td class="text-align-right td-bus-label"><div class="bus-label button button-raised button-fill">Air-Con</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+        <div class="row">
+          <p hidden class='hidTime' id="hidTimeB"></p>
+          <p hidden class='hidLine' id="hidLineB"></p>
+          <table class="main-table">
+            <tr>
+              <td rowspan="2">
+                <p class="main-bus-desc">Bus Liner - B</p>
+              </td>
+              <td class="text-align-right td-bus-label"><div class="bus-label button button-raised button-fill">Seating</div></td>
+              <td rowspan="2" class="text-align-right num-display"><a href="#" class="button button-raised button-fill color-black color-green main-button-time" id="btnLineB">20</a></td>
+            </tr>
+            <tr>
+                <td class="text-align-right td-bus-label"><div class="bus-label button button-raised button-fill">Air-Con</div></td>
+            </tr>
+          </table>
+        </div>
+      </div> -->
+      <!-- <div class="block-title">Navigation</div>
+      <div class="list">
+        <ul>
+          <li>
+            <a href="/about/" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">About</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/form/" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">Form</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div> -->
+
+      <!-- <div class="block-title">Modals</div>
+      <div class="block block-strong">
+        <div class="row">
+          <div class="col-50">
+            <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
+          </div>
+          <div class="col-50">
+            <a href="#" class="button button-raised button-fill login-screen-open" data-login-screen="#my-login-screen">Login Screen</a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="block-title">Panels</div>
+      <div class="block block-strong">
+        <div class="row">
+          <div class="col-50">
+            <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Left Panel</a>
+          </div>
+          <div class="col-50">
+            <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Right Panel</a>
+          </div>
+        </div>
+      </div> -->
+<!-- 
+      <div class="list links-list">
+        <ul>
+          <li>
+            <a href="/dynamic-route/blog/45/post/125/?foo=bar#about">Dynamic (Component) Route</a>
+          </li>
+          <li>
+            <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
+          </li>
+          <li>
+            <a href="/request-and-load/user/123456/">Request Data & Load</a>
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </div>
+</template>
+<script>
+export default {
+    data: function () {
+      return {
+        bus: this.$root.bus,
+      };
+    }
+  };
+</script>

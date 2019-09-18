@@ -1,0 +1,49 @@
+<template>
+    <div class="page" data-name="home">
+      <!-- Top Navbar -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          
+          <div class="title-large">
+            <div class="title-large-text center">Bus-ARS</div>
+          </div>
+        </div>
+      </div>
+        
+      <!-- Scrollable page content-->
+      <div class="page-content">
+        <div class="block block-strong">
+                <div class="tabs">
+                        <!-- Link that activates first tab, has the same href attribute (#tab1) as the id attribute of first tab (tab1)  -->
+            <a href="#tab1" class="tab-link tab-link-active">TAB ABABABABBABABA</a>
+            
+            <!-- Link that activates 2nd tab, has the same href attribute (#tab2) as the id attribute of 2nd tab (tab2)  -->
+            <a href="#tab2" class="tab-link">Tab 2</a>
+            
+            <!-- Link that activates 3rd tab, has the same href attribute (#tab2) as the id attribute of 3rd tab (tab3)  -->
+            <a href="#tab3" class="tab-link">Tab 3</a>
+                        <!-- First tab, should have "tab" class and unique id attribute -->
+                        <!-- First tab is active by default - additional "tab-active" class -->
+                        <div class="tab tab-active" id="tab1">
+                          ... Tab 1 content goes here ...
+                        </div>
+                        <!-- Second tab, should have "tab" class and unique id attribute -->
+                        <div class="tab" id="tab2">
+                          ... Tab 2 content goes here ...
+                        </div>
+                        <!-- Third tab, should have "tab" class and unique id attribute -->
+                        <div class="tab" id="tab3">
+                          ... Tab 3 content goes here ...
+                        </div>
+                    </div>
+          <p>Hello</p>
+  
+          <p></p>
+          
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+  export default {}
+  </script>

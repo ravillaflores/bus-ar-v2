@@ -1,0 +1,58 @@
+<template>
+  <div class="page" data-name="bus">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="if-not-md">Back</span>
+          </a>
+        </div>
+        <!-- <div class="title">{{busstop.stopname}}</div> -->
+      </div>
+    </div>
+    <div class="page-content">
+      <div></div>
+      <div class="list links-list">
+        <ul>
+            {{#each buslist}}
+            <li><a href="#" class="prodItem">{{buslist}} </a></li>
+            {{#each}}
+          </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    data: function () {
+      var stopCode = this.$route.params.stopcode;
+      var rootBusStop = this.$root.busstop;
+      var thisStop;
+      var bList;
+      var count = 0;
+      rootBusStop.forEach(function (busstop) {
+        if (busstop.stopcode === stopCode) {
+          thisStop = busstop;
+          bList = busstop.buslist;
+          bList.forEach(function(bus) {
+            count += 1;
+          });
+        }
+      });
+
+      var arr_B = new Array(count);
+      var ctr = 0;
+      thisStop.buslist.forEach(function(buslist) {
+        arr_B[ctr] = buslist.buscode;
+        ctr+=1;
+      });
+
+
+      return {
+        busstop: thisStop,
+        buslist: arr_B,
+      };
+    }
+  };
+</script>
