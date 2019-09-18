@@ -2,7 +2,8 @@
   "name": "cs147-lab-1",
   "description": "Serving static content via html files",
   "version": "0.0.1",
-  "author": "Raymond",
+  "author": "CS147 Staff <cs147@cs.stanford.edu>",
+
   "framework7": {
     "cwd": "C:\\Users\\Raymond Villaflores\\Documents\\bus-ar-v2",
     "type": [
@@ -29,18 +30,25 @@
       "inlineAssets": true
     }
   },
+
+
   "repository": {
     "type": "git",
     "url": "https://github.com/ravillaflores/bus-ar-v2.git"
   },
 
   "main": "server.js",
+  "engines": {
+  	"node": "0.10.x"
+  },
   "dependencies": {
-    "express": "3.x",
+    "express": "3.x"
     "dom7": "^2.1.3",
     "framework7": "^4.5.0",
     "framework7-icons": "^2.3.1",
-    "template7": "^1.4.2",
+    "template7": "^1.4.2"
+  },
+  "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.5.5",
@@ -67,24 +75,5 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
-  },
-  "engines": {
-  	"node": "0.10.x"
-  },
-  "scripts": {
-    "build-dev": "cross-env NODE_ENV=development node ./build/build.js",
-    "build-prod": "cross-env NODE_ENV=production node ./build/build.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
-    "start": "npm run dev",
-    "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './src/fonts/'"
-  },
-  "browserslist": [
-    "Android >= 5",
-    "IOS >= 9.3",
-    "Edge >= 15",
-    "Safari >= 9.1",
-    "Chrome >= 49",
-    "Firefox >= 31",
-    "Samsung >= 5"
-  ]
+  }
 }
