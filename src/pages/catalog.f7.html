@@ -1,0 +1,45 @@
+<template>
+  <div class="page" data-name="catalog">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="title">Select Bus</div>
+      </div>
+    </div>
+    <div class="searchbar-backdrop"></div>
+    <form class="searchbar" data-search-in="">
+      <div class="searchbar-inner">
+        <div class="searchbar-input-wrap">
+          <input type="search" placeholder="Search">
+          <i class="searchbar-icon"></i>
+          <span class="input-clear-button"></span>
+        </div>
+        <span class="searchbar-disable-button">Cancel</span>
+      </div>
+    </form>
+    <div class="page-content">
+      <div class="searchbar-backdrop"></div>
+      <div class="block searchbar-hide-on-search">
+          <p></p>
+      </div>
+      <div class="list links-list searchbar-found">
+        <ul>
+          {{#each busstop}}
+            <li><a href="/busList/{{stopcode}}/" class="prodItem">{{stopname}} [{{stopcode}}]</a></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="block searchbar-not-found">
+          <div class="block-inner">Nothing found</div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    data: function () {
+      return {
+        busstop: this.$root.busstop,
+      };
+    }
+  };
+</script>
