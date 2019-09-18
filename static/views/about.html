@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+<head>
+	<title> About - RAVillaflores </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- javascript -->
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/bootstrap.bundle.js"></script>
+	<script src="../js/custom.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/bootstrap-grid.css">
+	<link rel="stylesheet" href="../css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="../css/bootstrap-theme.css">
+	<link rel="stylesheet" href="../css/Custom/main.css">
+
+	<script>
+		$(document).ready(function () {
+			if (document.location.href.indexOf("layout") < 0 ) {
+				$( "#tgtHeader" ).load( "../layout/layout.html #lyNavbar", function() {
+
+				});
+				$( "#tgtFooter" ).load( "../layout/layout.html #lyFooter", function() {
+
+				});
+			}
+
+			$('#aAbout').addClass("active");
+
+			setFooterDate('#cYr')
+
+		});
+	</script>
+</head>
+
+<body>
+	<container id="tgtHeader"></container>
+	<div class="form-group">
+		<div>
+			<h1 class="title info text-center">WIP</h1>
+		</div>
+	</div>
+	<div class="footer">
+		<footer id="lyFooter">
+			<p class="text-center">All Rights Reserved <container id="cYr"></container>.</p>
+		</footer>
+	</div>
+</body>
+
+</html>

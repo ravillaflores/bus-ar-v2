@@ -1,0 +1,204 @@
+<!doctype html>
+
+<html>
+<head>
+	<title> Aurora - RAV </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- javascript -->
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/bootstrap.bundle.js"></script>
+	<script src="../js/custom.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/bootstrap-grid.css">
+	<link rel="stylesheet" href="../css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="../css/bootstrap-theme.css">
+	<link rel="stylesheet" href="../css/Custom/main.css">
+
+	<script>
+		$(document).ready(function () {
+			if (document.location.href.indexOf("layout") < 0) {
+				$("#tgtHeader").load("../layout/layout.html #lyNavbar", function () {
+
+				});
+				$("#tgtFooter").load("../layout/layout.html #lyFooter", function () {
+
+				});
+			}
+
+			$('#aHome').addClass("active");
+
+			$('#crslHeading').carousel({
+				interval: 3000
+			});
+
+			$('.carousel-item').hover(function () {
+				$(this).carousel('pause');
+			});
+
+			setFooterDate('#cYr')
+
+			$('.card').hover(function () {
+				var id = $(this).attr('id');
+				toggleInfo(id);
+			});
+		});
+	</script>
+
+
+</head>
+
+<container id="tgtHeader">
+	<!-- NavBar -->
+</container>
+
+<div class="container">
+	<div class="row row-carousel">
+		<div id="crslHeading" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-slide-to="0" class="active"></li>
+				<li data-slide-to="1"></li>
+				<li data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="img-crsl" src="../images/carousel_1.jpg" alt="First slide">
+					<div class="carousel-caption d-none d-md-block">
+						<!-- <p>Exquisite and captivating</p> -->
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class=" img-crsl" src="../images/carousel_2.jpg" alt="Second slide">
+					<div class="carousel-caption d-none d-md-block">
+						<!-- <p>Mesmerizing and fascinating</p> -->
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class=" img-crsl" src="../images/carousel_3.jpg" alt="Third slide">
+					<div class="carousel-caption d-none d-md-block">
+						<!-- <p>Awe-inspiring scenery</p> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row ">
+		<div class="title col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<p>
+				<h3 class="info text-center">Aurora Borealis - The Dancing Lights</h3>
+			</p>
+			<p class="info text-center">
+				What are the northern lights? On a very basic level, 
+				the northern lights are quite simple to explain. 
+				It is created from a collision between electrically 
+				charged particles from the sun that enter the atmosphere of the earth. 
+				The lights come at night when the sky is dark. 
+				It’s like a celestial ballet of light dancing across the night sky, 
+				with a colour palette (green, pink, violet) reminiscent of a really 
+				cool fashion show from the 1980s.
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<fieldset class="mw-100 ml-2 mr-2">
+				<legend class="text-center info">
+						Where to see it?
+				</legend>
+				<div class="row card-row">
+					<div class="card text-center col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id="card-norway">
+						<img class="card-img-top" src="../images/card_norway.jpg" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">Norway</p>
+							<p class="card-text text-left" hidden id="info-norway">
+									Northern Norway is amongst the most comfortable and 
+									interesting places to see the northern lights, 
+									as hundreds of thousands of people live in this huge 
+									geographical area. 
+									The region offers a vast selection of 
+									activities, tours, cruises, restaurants and 
+									hotels, which all play an important part in 
+									the Arctic experience.
+							</p>
+						</div>
+					</div>
+					<div class="card text-center col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id="card-canada">
+						<img class="card-img-top" src="../images/card_canada.jpg" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">Canada</p>
+							<p class="card-text text-left" hidden id="info-canada"></p>
+						</div>
+					</div>
+					<div class="card text-center col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id="card-iceland">
+						<img class="card-img-top" src="../images/card_iceland.jpg" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">Iceland</p>
+							<p class="card-text text-left" hidden id="info-iceland"></p>
+						</div>
+					</div>
+					<div class="card text-center col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id="card-greenland">
+						<img class="card-img-top" src="../images/card_greenland.jpg" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">Greenland</p>
+							<p class="card-text text-left" hidden id="info-greenland"></p>
+						</div>
+					</div>
+				</div>
+				<div class="row card-row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" hidden id="info-norway">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								Norway
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								Norway Image
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" hidden id="info-canada">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								Canada
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								Canada Image
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" hidden id="info-iceland">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								Iceland
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								Iceland Image
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" hidden id="info-greenland">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								GreenLand
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+								GreenLand Image
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	
+</div>
+<div class="footer">
+	<footer id="lyFooter">
+		<p class="text-center">All Rights Reserved <container id="cYr"></container>.</p>
+	</footer>
+</div>
+
+</html>

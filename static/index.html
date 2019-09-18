@@ -1,0 +1,259 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title> Home - RAV </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- javascript -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+	<script src="js/custom.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.css">
+	<link rel="stylesheet" href="css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/Custom/main.css">
+
+	<script>
+		$(document).ready(function () {
+			if (document.location.href.indexOf("layout") < 0) {
+				$("#tgtHeader").load("../layout/layout.html #lyNavbar", function () {
+
+				});
+				$("#tgtFooter").load("../layout/layout.html #lyFooter", function () {
+
+				});
+			}
+
+			$('#aHome').addClass("active");
+
+			$('#crslHeading').carousel({
+				interval: 3000
+			});
+
+			$('.carousel-item').hover(function () {
+				$(this).carousel('pause');
+			});
+
+			setFooterDate('#cYr')
+
+			// $('.card').hover(function () {
+			// 	var id = $(this).attr('id');
+			// 	toggleInfo(id);
+			// });
+		});
+	</script>
+</head>
+
+<body>
+	<container id="tgtHeader">
+		<!-- NavBar -->
+	</container>
+
+	<container id="tgtBody">
+		<div class="container">
+			<div class="row row-carousel">
+				<div id="crslHeading" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-slide-to="0" class="active"></li>
+						<li data-slide-to="1"></li>
+						<li data-slide-to="2"></li>
+						<li data-slide-to="3"></li>
+						<li data-slide-to="4"></li>
+						<li data-slide-to="5"></li>
+						<!-- <li data-slide-to="6"></li>
+						<li data-slide-to="7"></li>
+						<li data-slide-to="8"></li> -->
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img class="img-crsl" src="../images/personal/dingalan_1.jpg" alt="Dingalan Entrance">
+							<div class="carousel-caption d-none d-md-block">
+								<p class="info">Dingalan</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img class="img-crsl" src="../images/personal/dingalan_summit_1.jpg" alt="Summit 1">
+							<div class="carousel-caption d-none d-md-block">
+								<p class="info">Dingalan Summit - View Point</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img class="img-crsl" src="../images/personal/dingalan_summit_2.jpg" alt="Summit 2">
+							<div class="carousel-caption d-none d-md-block">
+							</div>
+						</div>
+						<div class="carousel-item ">
+							<img class="img-crsl" src="../images/personal/nueva_ecija.jpg" alt="Nueva nueva_ecija">
+							<div class="carousel-caption d-none d-md-block">
+								<p>Cabanatuan - Provincial Capital of Nueva Ecija</p>
+							</div>
+						</div>
+						<!-- <div class="carousel-item ">
+							<img class="img-crsl" src="../images/personal/baguio_park.jpg" alt="Baguio Park">
+							<div class="carousel-caption d-none d-md-block">
+								<p></p>
+							</div>
+						</div> -->
+						<div class="carousel-item ">
+							<img class="img-crsl" src="../images/personal/caleruega_scene.jpg" alt="Caleruega">
+							<div class="carousel-caption d-none d-md-block">
+								<p></p>
+							</div>
+						</div>
+						<!-- <div class="carousel-item ">
+							<img class="img-crsl" src="../images/personal/tagaytay.jpg" alt="Tagaytay">
+							<div class="carousel-caption d-none d-md-block">
+								<p></p>
+							</div>
+						</div> -->
+						<div class="carousel-item ">
+							<img class="img-crsl" src="../images/personal/pizza_pasta.jpg" alt="Pizza Pasta">
+							<div class="carousel-caption d-none d-md-block">
+								<p></p>
+							</div>
+						</div>
+						<!-- <div class="carousel-item ">
+							<img class="img-crsl" src="../images/personal/shadow.jpg" alt="Shadow">
+							<div class="carousel-caption d-none d-md-block">
+								<p></p>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+			<div class="row banner-row">
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 banner text-center">
+					<img class="img-profile" src="../images/personal/profile_1.jpg">
+				</div>
+				<div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 banner">
+					<table class="table table-sm table-responsive">
+						<tbody>
+							<tr>
+								<td class="info">
+									<h1>Raymond Anthony A. Villaflores II</h1>
+								</td>
+							</tr>
+							<tr>
+								<td class="info">
+									<h2>Developer | Gamer | Traveller | Foodie</h2>
+								</td>
+							</tr>
+							<tr>
+								<td class="info text-center">
+									<h3><i>"I need not to be Right, I just don't have to be wrong"</i></h3>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<ul class="nav nav-tabs text-dark" id="infoTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#tabProfile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#tabHobbies" role="tab" aria-controls="profile" aria-selected="false">Hobbies</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabSkills" role="tab" aria-controls="contact" aria-selected="false">Food</a>
+						</li>
+					</ul>
+					<div class="tab-content" id="infoTabContent">
+						<div class="tab-pane fade show active" id="tabProfile" role="tabpanel" aria-labelledby="home-tab">
+							<div class="row card-row">
+								<div class="card text-center col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="pepsi_fam">
+									<img class="card-img-top profile" src="../images/personal/pepsi_fam.jpg" alt="Pepsi">
+									<div class="card-body">
+										<p class="card-text text-center">PCPPI</p>
+										<p class="card-text text-left">
+											Pepsi Cola Products Philippines, Inc.
+											First real job in the line of IT. Worked as a Full Stack Web and Application Developer. <br />
+											Programming Languages: VB6, ASP.NET, C#, MS-SQL, JQuery, Javascript, AngularJS. <br />
+											Years Worked: Dec 2016 - Jun 2019 (2 Years and 7 Months)
+										</p>
+									</div>
+								</div>
+								<div class="card text-center col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="pepsi_fam">
+									<img class="card-img-top profile" src="../images/personal/tagum.jpg" alt="Pepsi">
+									<div class="card-body">
+										<p class="card-text text-center">Out of town Work</p>
+										<p class="card-text text-left">
+											Tagum, Davao. <br />
+											One out of the many places I've been but in Tagum, I had a lot of time to explore. <br />
+											Plants and Warehouses visited: Pampanga, Tarlac, Iligan City in Cagayan De Oro, Cagayan De Oro, Digos City Davao, Davao City Davao, Kidapawan Davao.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="tabHobbies" role="tabpanel" aria-labelledby="profile-tab">
+							<div class="row card-row">
+								<div class="card text-center col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="dota-archon">
+									<img class="card-img-top" src="../images/personal/archon_6.png" id="img-dota" alt="Archon">
+									<div class="card-body">
+										<p class="card-text text-center">Dota 2</p>
+										<p class="card-text text-left" id="info-Dota">
+											Rank: Archon 6 <br />
+											Total Playtime: 3875 hours
+										</p>
+									</div>
+								</div>
+								<div class="card text-center col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="underlord">
+									<img class="card-img-top " src="../images/personal/smuggler_1.png" id="img-underlord" alt="Smuggler">
+									<div class="card-body">
+										<p class="card-text text-center">Dota Underlords</p>
+										<p class="card-text text-left" id="info-Dota">
+											Rank: Smuggler 1
+											Hours Played: 37 hours
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="tabSkills" role="tabpanel" aria-labelledby="contact-tab">
+							<div class="row">
+									<div class="card text-center col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="underlord">
+										<img class="card-img-top food" src="../images/personal/okos.jpg" alt="Smuggler">
+										<div class="card-body">
+											<p class="card-text text-center">Okonomiyaki</p>
+											<p class="card-text text-left" id="info-Dota">
+												Forgot the Resto name but it's in Little Tokyo, near Makati Square.
+											</p>
+										</div>
+									</div>
+									<div class="card text-center col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="underlord">
+										<img class="card-img-top food" src="../images/personal/lomi.jpg" alt="Smuggler">
+										<div class="card-body">
+											<p class="card-text text-center">Lomi</p>
+											<p class="card-text text-left" id="info-Dota">
+												When in Batangas, you must try the very hot and tasty Lomi!
+											</p>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				
+			</div>
+		</div>
+	</container>
+
+	<div class="footer">
+		<footer id="lyFooter">
+			<p class="text-center text-white">All Rights Reserved <container id="cYr"></container>.</p>
+		</footer>
+	</div>
+</body>
+</html>
