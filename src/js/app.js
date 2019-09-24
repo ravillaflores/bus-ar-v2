@@ -257,6 +257,22 @@ var app = new Framework7({
     helloWorld: function () {
       app.dialog.alert('Hello World!');
     },
+    runTimer: function() {
+      setInterval(function() {
+        $$(".hidTime").each(function() {
+          var id = $$(this).attr('id');
+          var idSub = id.substring(8,21);
+          // alert(idSub);
+      
+          $$(this).text(time);
+          var hidLineID = '#hidLine-'+idSub;
+          var btnLineID = '#btnLine-'+idSub;
+      
+          $$(hidLineID).text($$(btnLineID).text());
+          
+        });
+      });
+    }
   },
   // App routes
   routes: routes,
@@ -317,6 +333,8 @@ $$(document).on('DOMContentLoaded', function(){
     $$(hidLineID).text($$(btnLineID).text());
 
   });
+
+  runTimer();
 });
 
 // Random Number Generator

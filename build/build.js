@@ -1,3 +1,5 @@
+
+
 const webpack = require('webpack');
 const ora = require('ora');
 const rm = require('rimraf');
@@ -34,3 +36,4 @@ rm(isCordova ? './cordova/www' : './www/', (removeErr) => {
     console.log(chalk.cyan('Build complete.\n'));
   });
 });
+
